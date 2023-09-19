@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Tailwind CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
+    <!-- Additional CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Loader -->
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="medsos bg-gradient-to-r from-green-400 to-purple-600 py-4">
+        <div class="container flex justify-center">
+            <a href="https://wa.me/6285841566136" class="social-icon mx-2" style="color: white">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="https://instagram.com/muana.media/" class="social-icon mx-2" style="color: white">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://linkedin.com/company/muana-bimbel/" class="social-icon mx-2" style="color: white">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'beranda' %}"><b>MUANA ACADEMY</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'beranda' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'service' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'articles' %}">Articles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Section -->
+    <section class="container mt-5">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h2 class="card-title mb-4">Download Student Attendance</h2>
+                    <a href="/path/to/student/attendance/file.xlsx" class="btn btn-primary btn-lg rounded-pill px-5"
+                        download>
+                        <i class="fas fa-download mr-2"></i>Download
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h2 class="card-title mb-4">Download Tutor Attendance</h2>
+                    <a href="/path/to/tutor/attendance/file.xlsx" class="btn btn-primary btn-lg rounded-pill px-5"
+                        download>
+                        <i class="fas fa-download mr-2"></i>Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-gradient-to-r from-green-400 to-purple-600">
+        <div class="container">
+            <small class="text-white">&copy; 2023. Muana Media Technology. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS scripts (Popper.js and Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

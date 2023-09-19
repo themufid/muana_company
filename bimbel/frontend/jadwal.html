@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        rel="stylesheet"
+    />
+</head>
+
+<body class="bg-gray-100">
+    <!-- Loader -->
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="medsos bg-gradient-to-r from-green-400 to-purple-600 py-4">
+        <div class="container flex justify-center">
+            <a
+                href="https://wa.me/6285841566136"
+                class="social-icon mx-2"
+                style="color: white"
+            >
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a
+                href="https://instagram.com/muana.media/"
+                class="social-icon mx-2"
+                style="color: white"
+            >
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a
+                href="https://linkedin.com/company/muana-bimbel/"
+                class="social-icon mx-2"
+                style="color: white"
+            >
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'beranda' %}"><b>MUANA ACADEMY</b></a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'beranda' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'service' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'articles' %}">Articles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4">Schedule Management</h1>
+
+            <!-- Form to Add/Edit Schedule -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form id="schedule-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="class">Class:</label>
+                            <select id="class" class="form-control" required>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Umum">Umum</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Time:</label>
+                            <input type="text" id="time" class="form-control" required>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="submitSchedule()">Submit</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Schedule List -->
+            <h2>Schedule List</h2>
+            <ul id="schedule-list" class="list-group"></ul>
+        </div>
+
+        <section
+            class="footer-content"
+            style="
+                background-color: #fff;
+                color: #000;
+                font-size: 12px;
+                text-align: center;
+                padding: 10px 0;
+            "
+        >
+            <div class="container flex justify-center">
+                <div class="footer-item mx-4">
+                    <h4>
+                        <a
+                            href="{% url 'privacy-policy' %}"
+                            style="color: #000; font-size: 12px"
+                            >Privacy Policy</a
+                        >
+                    </h4>
+                </div>
+
+                <div class="footer-item mx-4">
+                    <h4>
+                        <a
+                            href="{% url 'disclaimer' %}"
+                            style="color: #000; font-size: 12px"
+                            >Disclaimer</a
+                        >
+                    </h4>
+                </div>
+
+                <div class="footer-item mx-4">
+                    <h4>
+                        <a href="{% url 'term' %}" style="color: #000; font-size: 12px"
+                            >Term and Condition</a
+                        >
+                    </h4>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer
+            class="text-center py-4 bg-gradient-to-r from-green-400 to-purple-600"
+        >
+            <div class="container">
+                <small class="text-white"
+                    >&copy; 2023. Muana Media Technology. All Rights Reserved.</small
+                >
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            let editMode = false;
+            let editIndex = -1;
+
+            function submitSchedule() {
+                const name = document.getElementById("name").value;
+                const className = document.getElementById("class").value;
+                const subject = document.getElementById("subject").value;
+                const time = document.getElementById("time").value;
+
+                if (editMode) {
+                    // Update existing schedule
+                    const listItem = document.getElementById(`schedule-${editIndex}`);
+                    listItem.innerHTML = `
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Name:</strong> ${name}, 
+                                <strong>Class:</strong> ${className}, 
+                                <strong>Subject:</strong> ${subject}, 
+                                <strong>Time:</strong> ${time}
+                            </div>
+                            <button type="button" class="btn btn-danger" onclick="deleteSchedule(${editIndex})">Delete</button>
+                            <button type="button" class="btn btn-info" onclick="editSchedule(${editIndex})">Edit</button>
+                        </div>
+                    `;
+                    editMode = false;
+                } else {
+                    // Add new schedule
+                    const scheduleList = document.getElementById("schedule-list");
+                    const scheduleItem = document.createElement("li");
+                    scheduleItem.classList.add("list-group-item");
+                    scheduleItem.id = `schedule-${scheduleList.children.length}`;
+
+                    scheduleItem.innerHTML = `
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Name:</strong> ${name}, 
+                                <strong>Class:</strong> ${className}, 
+                                <strong>Subject:</strong> ${subject}, 
+                                <strong>Time:</strong> ${time}
+                            </div>
+                            <button type="button" class="btn btn-danger" onclick="deleteSchedule(${scheduleList.children.length})">Delete</button>
+                            <button type="button" class="btn btn-info" onclick="editSchedule(${scheduleList.children.length})">Edit</button>
+                        </div>
+                    `;
+
+                    scheduleList.appendChild(scheduleItem);
+                }
+
+                // Reset form inputs
+                document.getElementById("name").value = '';
+                document.getElementById("class").value = '';
+                document.getElementById("subject").value = '';
+                document.getElementById("time").value = '';
+            }
+
+            function editSchedule(index) {
+                const listItem = document.getElementById(`schedule-${index}`);
+                const values = listItem.innerText.match(/[\w]+/g);
+                document.getElementById("name").value = values[1];
+                document.getElementById("class").value = values[3];
+                document.getElementById("subject").value = values[5];
+                document.getElementById("time").value = values[7];
+                editMode = true;
+                editIndex = index;
+            }
+
+            function deleteSchedule(index) {
+                const listItem = document.getElementById(`schedule-${index}`);
+                listItem.remove();
+            }
+
+            function cancelEdit() {
+                editMode = false;
+                editIndex = -1;
+                document.getElementById("name").value = '';
+                document.getElementById("class").value = '';
+                document.getElementById("subject").value = '';
+                document.getElementById("time").value = '';
+            }
+        </script>
+    </body>
+
+</html>

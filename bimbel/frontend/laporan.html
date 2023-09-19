@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Harian</title>
+    <!-- Tambahkan link Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <body class="bg-gray-100">
+      <!-- Loader -->
+      <div class="bg-loader">
+        <div class="loader"></div>
+      </div>
+  
+      <!-- Header -->
+      <div class="medsos bg-gradient-to-r from-green-400 to-purple-600 py-4">
+        <div class="container flex justify-center">
+          <a
+            href="https://wa.me/6285841566136"
+            class="social-icon mx-2"
+            style="color: white"
+          >
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+          <a
+            href="https://instagram.com/muana.media/"
+            class="social-icon mx-2"
+            style="color: white"
+          >
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a
+            href="https://linkedin.com/company/muana-bimbel/"
+            class="social-icon mx-2"
+            style="color: white"
+          >
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+      </div>
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'beranda' %}"><b>MUANA ACADEMY</b></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'beranda' %}">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'service' %}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'articles' %}">Articles</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Isi laporan harian di sini -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Laporan Hari Ini</h5>
+          <p class="card-text">Analisis perkembangan siswa untuk hari ini.</p>
+          <a href="#" class="btn btn-primary">Lihat Laporan</a>
+        </div>
+      </div>
+    </main>
+    <div class="container flex justify-center">
+      <div class="footer-item mx-4">
+        <h4>
+          <a
+            href="{% url 'privacy-policy' %}"
+            style="color: #000; font-size: 12px"
+            >Privacy Policy</a
+          >
+        </h4>
+      </div>
+
+      <div class="footer-item mx-4">
+        <h4>
+          <a
+            href="{% url 'disclaimer' %}"
+            style="color: #000; font-size: 12px"
+            >Disclaimer</a
+          >
+        </h4>
+      </div>
+
+      <div class="footer-item mx-4">
+        <h4>
+          <a href="{% url 'term' %}" style="color: #000; font-size: 12px"
+            >Term and Condition</a
+          >
+        </h4>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer
+    class="text-center py-4 bg-gradient-to-r from-green-400 to-purple-600"
+  >
+    <div class="container">
+      <small class="text-white"
+        >&copy; 2023. Muana Media Technology. All Rights Reserved.</small
+      >
+    </div>
+  </footer>
+    <!-- Tambahkan link Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
