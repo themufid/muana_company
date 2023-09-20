@@ -1,4 +1,4 @@
-<b>Hi All Teamz</b>
+<b>Hi All Team</b>
 
 Selamat datang di Muana Company Project
 
